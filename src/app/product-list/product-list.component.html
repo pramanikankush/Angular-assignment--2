@@ -1,0 +1,34 @@
+<section>
+  <div class="card shadow-sm border-0">
+    <div class="card-body">
+      <h3 class="h4 fw-bold mb-3">Product List</h3>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover align-middle mb-0">
+      <thead>
+        <tr class="table-light">
+          <th>Id</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Option</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.pid }}</td>
+          <td>{{ product.pname }}</td>
+          <td>{{ product.price | number:'1.2-4' }}</td>
+          <td>{{ product.category }}</td>
+          <td>
+            <button type="button" class="btn btn-sm btn-outline-danger" (click)="deleteProduct(product.pid)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

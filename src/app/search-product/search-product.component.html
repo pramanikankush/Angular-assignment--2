@@ -1,0 +1,44 @@
+<section>
+  <div class="card shadow-sm border-0">
+    <div class="card-body">
+      <h2 class="h3 fw-bold mb-4">Search Form</h2>
+
+      <div class="row g-2 align-items-center mb-4">
+        <div class="col-sm-6 col-md-4">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="searchText"
+            placeholder="Search by name or category"
+          >
+        </div>
+        <div class="col-auto">
+          <button type="button" class="btn btn-primary" (click)="searchProduct()">Search</button>
+        </div>
+      </div>
+
+      <h3 class="h4 fw-bold mb-3">Product List</h3>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover align-middle mb-0">
+      <thead>
+        <tr class="table-light">
+          <th>Id</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of filteredProducts">
+          <td>{{ product.pid }}</td>
+          <td>{{ product.pname }}</td>
+          <td>{{ product.price | number:'1.2-4' }}</td>
+          <td>{{ product.category }}</td>
+        </tr>
+      </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
